@@ -1,0 +1,24 @@
+@import "/scss/theme.scss";
+
+div.partner-profile {
+  padding: 15px;
+
+  h2 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 14px;
+    padding: 0 0 15px 0;
+  }
+
+  div.partner-form {
+    input, textarea {
+      margin: 0 0 15px 0;
+    }
+
+    a.button {
+      padding-bottom: 2px;
+    }
+  }
+}

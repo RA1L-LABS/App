@@ -1,0 +1,25 @@
+@import "/scss/theme.scss";
+
+div.mint-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 15px 15px 15px;
+
+  a.mint-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 48px;
+    margin: 15px;
+    border: 2px solid $fg;
+    opacity: 0.5;
+    pointer-events: none;
+    @include transition(opacity);
+    &.active {
+      opacity: 1;
+      pointer-events: inherit;
+    }
+  }
+}

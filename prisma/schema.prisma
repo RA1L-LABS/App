@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mongodb"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Account {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId()
+  address       String   @db.String()
+  network       String   @db.String()
+  country       String?  @db.String()
+  birthday      String?  @db.String()
+  age           Int?     @db.Int
+  postalCode    String?  @db.String()
+  phone         String?  @db.String()
+  email         String?  @db.String()
+  firstName     String?  @db.String()
+  middleName    String?  @db.String()
+  lastName      String?  @db.String()
+  personaId     String?  @db.String()
+  personaClass  String?  @db.String()
+  personaNumber String?  @db.String()
+  status        String?  @db.String()
+  nftTx         String?  @db.String()
+  nftId         Int?     @db.Int()
+  autoApprove   Boolean  @default(false) @db.Bool()
+  dateCreated   DateTime @default(now())
+  dateUpdated   DateTime @updatedAt
+
+  @@unique([address, network])
+  @@index(address)
+  @@index(network)
+  @@index(personaId)
+  @@index(nftId)
+  @@index(nftTx)
+  @@index(age)
+  @@index(country)
+  @@index(dateCreated)
+}
+
+model Partner {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId()
+  address     String    @db.String()
+  network     String    @db.String()
+  name        String?   @db.String()
+  description String?   @db.String()
+  requests    Request[]
+  dateCreated DateTime  @default(now())
+  dateUpdated DateTime  @updatedAt
+
+  @@unique([address, network])
+  @@index(address)
+  @@index(network)
+  @@index(dateCreated)
+}
+
+model Request {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId()
+  address     String   @db.String()
+  network     String   @db.String()
+  account     String   @db.String()
+  approved    Boolean  @default(false) @db.Bool()
+  partner     Partner  @relation(fields: [address, network], references: [address, network])
+  dateCreated DateTime @default(now())
+  dateUpdated DateTime @updatedAt
+
+  @@unique([address, network, account])
+  @@index([address, network])
+  @@index([account, network])
+  @@index([address, network, approved])
+  @@index(address)
+  @@index(network)
+  @@index(dateCreated)
+}

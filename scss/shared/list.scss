@@ -1,0 +1,60 @@
+@import "/scss/theme.scss";
+
+div.pd-list {
+  div.pd-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    margin: 0 0 10px 0;
+    background: rgba(0, 0, 0, 0.1);
+
+    div.pd-c {
+      font-size: 14px;
+      font-weight: 400;
+      padding: 5px;
+      padding-bottom: 8px;
+
+      input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        margin: 5px;
+      }
+
+      a.button {
+        position: relative;
+        top: 1px;
+        width: auto;
+        padding: 0 15px;
+        height: 24px;
+        font-size: 12px;
+      }
+
+      &:nth-child(1) {
+        width: 32px;
+        padding-bottom: 5px;
+      }
+      &:nth-child(2) {
+        width: calc(100% - 132px);
+      }
+      &:nth-child(3) {
+        width: 100px;
+      }
+
+      &.buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        a.button {
+          margin: 0 0 0 5px;
+        }
+      }
+    }
+
+    &.pd-header {
+      background: $bg3;
+      color: $bg;
+    }
+  }
+}

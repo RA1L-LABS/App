@@ -1,0 +1,15 @@
+@import "/scss/theme.scss";
+
+div.popup {
+  div.popup-content.popup-approve {
+    div.approve-list {
+      padding: 15px 0;
+
+      p {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 0 0 15px 0;
+      }
+    }
+  }
+}

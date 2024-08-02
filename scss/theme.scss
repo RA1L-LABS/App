@@ -1,0 +1,36 @@
+$header-font: 'Oswald';
+$body-font: 'Oswald';
+
+$fg: #000000;
+$fg2: #e9ebf5;
+$bg: #ffffff;
+$bg2: #363944;
+$bg3: #303030;
+
+
+$primary: #C49A0F;
+$primary-light: #F2D577;
+
+// Frame Theme
+$red: #E9524A;
+$yellow: #F1AE1B;
+$green: #59C837;
+
+$frame-header: #F7FBFE;
+$frame-input: #F2F2F2;
+$frame-input-border: #E4E4E4;
+$frame-body: #D6D6D6;
+$frame-text: #676B74;
+
+$container-width: 968px;
+$header-height: 64px;
+$page-height: calc(100vh - 64px);
+
+@mixin transition($property: all, $duration: 0.25s) {
+  transition: $property $duration cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@mixin splash-bg-gradient() {
+  background: hsla(0, 0%, 11%, 1);
+  background: linear-gradient(180deg, hsla(0, 0%, 11%, 1) 0%, hsla(0, 0%, 19%, 1) 100%);
+}

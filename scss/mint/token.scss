@@ -1,0 +1,31 @@
+@import "/scss/theme.scss";
+
+div.mint-token {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
+  h2 {
+    font-size: 32px;
+    padding: 0 0 15px 0;
+  }
+
+  p {
+    font-size: 14px;
+    max-width: 420px;
+    text-align: center;
+    padding: 0 0 15px 0;
+  }
+
+  p.error {
+    color: $red;
+    font-weight: 700;
+  }
+
+  a.button {
+    width: 100%;
+    max-width: 240px;
+  }
+}

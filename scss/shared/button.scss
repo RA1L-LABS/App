@@ -1,0 +1,36 @@
+@import "/scss/theme.scss";
+
+a.button,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 56px;
+  padding: 0 32px;
+  background: $fg;
+  color: $bg;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include transition();
+  &:hover {
+    background: lighten($fg, 25%);
+  }
+  &.loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  &.button-outline {
+    background: $bg;
+    border: 2px solid $fg;
+    color: $fg;
+  }
+  &.white {
+    background: $bg;
+    color: $fg;
+    border: 1px solid #e9ebf5;
+  }
+}

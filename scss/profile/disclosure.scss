@@ -1,0 +1,85 @@
+@import "/scss/theme.scss";
+
+div.profile-disclosure {
+  padding: 15px;
+
+  h2 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 0 15px 0;
+  }
+
+  div.disclosure-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+    }
+
+    div.disclosure-toggle-ball {
+      position: relative;
+      width: 80px;
+      height: 40px;
+      margin: 0 15px;
+      background: rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+
+      div.inner-ball {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 30px;
+        height: 30px;
+        background: $fg;
+        @include transition(transform);
+        transform: translateX(0px);
+      }
+      &.toggle {
+        div.inner-ball {
+          transform: translateX(40px);
+        }
+      }
+    }
+  }
+
+  div.disclosure-tabs {
+    display: flex;
+    align-items: center;
+    padding: 0 0 30px 0;
+
+    a.disclosure-tab {
+      height: 42px;
+      margin: 0 15px 0 0;
+      padding: 0 15px 2px 15px;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  a.button.button-disclosure {
+    width: 100%;
+    height: 42px;
+    font-size: 12px;
+  }
+
+  div.pd-list {
+    div.pd-item {
+      div.pd-c {
+        &:nth-child(3) {
+          width: 240px;
+        }
+      }
+    }
+  }
+}

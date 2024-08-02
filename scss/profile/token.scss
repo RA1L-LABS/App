@@ -1,0 +1,34 @@
+@import "/scss/theme.scss";
+
+div.profile-token {
+  padding: 15px;
+
+  h2 {
+    font-size: 32px;
+    padding: 0 0 15px 0;
+  }
+
+  div.profile-labels {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+
+    div.profile-label {
+      width: calc(100% / 3);
+      padding: 10px;
+
+      &.profile-label-full {
+        width: 100%;
+      }
+
+      p:nth-child(1) {
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      a {
+        color: $fg;
+      }
+    }
+  }
+}
